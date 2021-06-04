@@ -1,4 +1,9 @@
 package com.ufps.pokeasesorias.persistence.entity;
 
-public class Respuesta {
+import java.io.Serializable;
+
+public class Respuesta implements Serializable {
+    private Long id;
+    private Mensaje mensajeAnterior;
+    private Mensaje mensajeSiguiente;
 }
