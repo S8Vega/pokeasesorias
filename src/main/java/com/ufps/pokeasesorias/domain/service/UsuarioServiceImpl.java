@@ -4,15 +4,14 @@ import com.ufps.pokeasesorias.persistence.dao.UsuarioDao;
 import com.ufps.pokeasesorias.persistence.entity.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
-public class UsuarioServiceImpl implements UserDetailsService, CrudServiceInterface<Usuario, Long> {
+@Service("UsuarioServiceImpl")
+public class UsuarioServiceImpl implements UsuarioServiceInterface {
 
     @Autowired
     private UsuarioDao usuarioDao;
@@ -31,8 +30,8 @@ public class UsuarioServiceImpl implements UserDetailsService, CrudServiceInterf
 
     @Transactional
     @Override
-    public void save(Usuario usuario) {
-        usuarioDao.save(usuario);
+    public Usuario save(Usuario usuario) {
+        return usuarioDao.save(usuario);
     }
 
     @Transactional

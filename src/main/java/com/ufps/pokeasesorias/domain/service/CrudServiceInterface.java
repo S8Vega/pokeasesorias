@@ -7,7 +7,7 @@ public interface CrudServiceInterface<Entity, Id> {
 
     public List<Entity> findAll();
 
-    public void save(Entity entity);
+    public Entity save(Entity entity);
 
     public void deleteById(Id id);
 }

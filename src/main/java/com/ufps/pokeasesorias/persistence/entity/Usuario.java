@@ -27,6 +27,7 @@ public class Usuario implements Serializable, UserDetails {
     @NonNull
     private String apellido;
     @NonNull
+    @Column(unique = true)
     private String alias;
     @NonNull
     private String contrasena;
