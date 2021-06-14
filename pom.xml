@@ -10,8 +10,9 @@
     </parent>
     <groupId>com.ufps</groupId>
     <artifactId>pokeasesorias</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <name>pokeasesorias</name>
+    <packaging>jar</packaging>
     <description>API para la comunicacion entre estudiantes para asesorias en la UFPS.</description>
     <properties>
         <java.version>11</java.version>

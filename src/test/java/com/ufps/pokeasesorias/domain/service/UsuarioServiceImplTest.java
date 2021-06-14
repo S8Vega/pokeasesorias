@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 @SpringBootTest
 class UsuarioServiceImplTest {
@@ -17,9 +18,12 @@ class UsuarioServiceImplTest {
     @Test
     public void crearUsuarioTest() {
         Usuario usuario = new Usuario();
-        usuario.setAlias("alias1");
+        String alias = "alias10";
+        usuario.setAlias(alias);
         usuario.setContrasena("contrasena1");
         Usuario retorno = usuarioService.save(usuario);
         assertEquals(usuario.getContrasena(), retorno.getContrasena());
+        usuarioService.deleteById(usuario.getId());
+        assertNull(usuarioService.findByAlias(alias));
     }
 }
